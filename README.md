@@ -17,11 +17,11 @@
 
 + 1.[树莓派zero图像分类与目标检测—数据获取与预处理](https://github.com/Sun-Yize-SDUWH/Deep-Learning-On-Raspberry-Pi-Zero/blob/master/Document/part1.md)
 
-+ 2.[树莓派zero图像分类与目标检测—图像分类模型](https://github.com/Sun-Yize-SDUWH/Deep-Learning-On-Raspberry-Pi-Zero/blob/master/Document/part1.md)
++ 2.[树莓派zero图像分类与目标检测—图像分类模型](https://github.com/Sun-Yize-SDUWH/Deep-Learning-On-Raspberry-Pi-Zero/blob/master/Document/part2.md)
 
-+ 3.[树莓派zero图像分类与目标检测—目标检测模型](https://github.com/Sun-Yize-SDUWH/Deep-Learning-On-Raspberry-Pi-Zero/blob/master/Document/part1.md)
++ 3.[树莓派zero图像分类与目标检测—目标检测模型](https://github.com/Sun-Yize-SDUWH/Deep-Learning-On-Raspberry-Pi-Zero/blob/master/Document/part3.md)
 
-+ 4.[树莓派zero图像分类与目标检测—深度学习部署](https://github.com/Sun-Yize-SDUWH/Deep-Learning-On-Raspberry-Pi-Zero/blob/master/Document/part1.md)
++ 4.[树莓派zero图像分类与目标检测—深度学习部署](https://github.com/Sun-Yize-SDUWH/Deep-Learning-On-Raspberry-Pi-Zero/blob/master/Document/part4.md)
 
 除此之外，本项目还在其他平台有相关的开源资料：
 
