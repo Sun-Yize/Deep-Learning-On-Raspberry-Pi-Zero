@@ -1,5 +1,8 @@
 # 树莓派zero图像分类与目标检测
 
+> 山东大学（威海） 2018级数据科学与人工智能实验班
+> 孙易泽 吴锦程 詹沛 徐潇涵
+
 **树莓派zero图像分类与目标检测**是深度学习的研究项目，旨在通过深度学习算法，实现树莓派的**实时识别与分类**。
 
 在树莓派上运行深度学习主要分为以下几个步骤：
@@ -21,7 +24,7 @@
 
 除此之外，本项目还在其他平台有相关的开源资料：
 
-[知乎专栏—树莓派zero图像分类与目标检测](https://github.com/Sun-Yize-SDUWH/Deep-Learning-On-Raspberry-Pi-Zero/blob/master/Document/part1.md)
+[知乎专栏—树莓派zero图像分类与目标检测](https://www.zhihu.com/column/c_1326223429637902336)
 
 [b站视频链接](https://www.bilibili.com/video/BV12a4y1n7MW)
 
