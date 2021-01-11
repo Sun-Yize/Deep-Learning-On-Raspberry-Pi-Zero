@@ -6,6 +6,22 @@
 
 **树莓派zero图像分类与目标检测**是深度学习的研究项目，旨在通过深度学习算法，实现树莓派的**实时识别与分类**。
 
+<table>
+    <tr>
+        <td ><center><img src="Document/image/img01.jpg"  width="80%"> </center></td>
+        <td ><center><img src="Document/image/img02.jpg"  width="70%"></center></td>
+        <td ><center><img src="Document/image/img03.jpg"  width="100%"></center></td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td ><center><img src="Document/image/img04.jpg"  width="80%"> </center></td>
+        <td ><center><img src="Document/image/img05.jpg"  width="80%"></center></td>
+        <td ><center><img src="Document/image/img06.jpg"  width="80%"></center></td>
+    </tr>
+</table>
+
 在树莓派上运行深度学习主要分为以下几个步骤：
 
 + 首先是**数据的获取及预处理**，图像分类与目标检测需要大量**干净且高质量**的图片数据进行训练，我们需要通过不同方式，尽可能多的获取到相关的图片数据，并处理为深度学习可用的形式。
