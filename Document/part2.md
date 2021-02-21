@@ -189,8 +189,6 @@ def load_image(img_path,size = (224,224)):
     return(img,label)
 ```
 
-（注意：load_image函数的label一行中，如果使用的为windows系统，需要将sep='/'改为sep='\\'，因为windows使用的文件名分隔符为\\）
-
 定义模型训练过程中主要参数：
 
 ```python
