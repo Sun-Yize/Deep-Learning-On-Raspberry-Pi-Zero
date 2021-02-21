@@ -181,12 +181,15 @@ from tensorflow.keras import layers, models
 
 ```python
 def load_image(img_path,size = (224,224)):
-    label = tf.cast(tf.compat.v1.string_to_number(tf.strings.split(img_path, sep='/',)[8]), tf.int8)
+    # 如果使用的windows系统，需要将sep='/'改为sep='\\'
+    label = tf.cast(tf.compat.v1.string_to_number(tf.strings.split(img_path, sep='/',)[-2]), tf.int8)
     img = tf.io.read_file(img_path)
     img = tf.image.decode_jpeg(img)
     img = tf.image.resize(img,size)/255.0
     return(img,label)
 ```
+
+（注意：load_image函数的label一行中，如果使用的为windows系统，需要将sep='/'改为sep='\\'，因为windows使用的文件名分隔符为\\）
 
 定义模型训练过程中主要参数：
 
