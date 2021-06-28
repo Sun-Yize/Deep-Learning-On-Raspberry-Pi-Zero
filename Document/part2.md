@@ -14,7 +14,7 @@
 
 在沿用了原模型中深度可分离卷积与到残差结构的基础上，我们对模型网络结构与参数进行了调整与优化，使其更好地对数据集进行学习，并得到了比原模型更高的准确率。
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img207.png" width=90%>
+<img src="./image/img207.png" width=90%>
 
 #### 2.1.1 经典模型学习
 
@@ -22,11 +22,11 @@
 
 **层数比较**：
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img201.png" width=50%>
+<img src="./image/img201.png" width=50%>
 
 **Top-1准确率**：
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img202.png" width=40%>
+<img src="./image/img202.png" width=40%>
 
 在这些网络中，我们感兴趣的模型有VGG、GoogleNet、ResNet，我们对这些模型的核心思想进行学习，分析了每个网络的结构以及优缺点，并找到各个网络相对于前一个网络的优化点，为我们之后自己的网络提供优化方向，总结如下：
 
@@ -36,7 +36,7 @@
 
 采用连续的几个**3x3的卷积核**代替较大卷积核，作为网络中的卷积核大小搭建模型。
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img203.png" width=80%>
+<img src="./image/img203.png" width=80%>
 
  
 
@@ -52,7 +52,7 @@
 
 inception结构的主要贡献有两个：一是使用1x1的卷积来进行升降维，二是在多个尺寸上同时进行卷积再聚合。
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img204.png" width=50%>
+<img src="./image/img204.png" width=50%>
 
 **优点**：增加了网络的深度和宽度，但没有增加计算代价、提升了对网络内部计算资源的利用。
 
@@ -62,11 +62,11 @@ inception结构的主要贡献有两个：一是使用1x1的卷积来进行升�
 
 参考了VGG19网络，在其基础上进行了修改，并通过短路机制加入了**残差块**（Residual Block）
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img205.png" width=80%>
+<img src="./image/img205.png" width=80%>
 
 **优点**：首次使用了残差块引入恒等快捷连接，直接跳过一个或多个层，解决了深度神经网络的“退化”问题，即给网络叠加更多的层后，性能却快速下降的情况。
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img206.png" width=40%>
+<img src="./image/img206.png" width=40%>
 
 #### 2.1.2 轻型网络的选择
 
@@ -84,7 +84,7 @@ inception结构的主要贡献有两个：一是使用1x1的卷积来进行升�
 
 网络由多个**dense block**组成，在dense block中每层的输入是前面所有层的输出concat形成的，结构如下： 
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img208.png" width=50%>
+<img src="./image/img208.png" width=50%>
 
 **优点**：加强了feature的传递，并更有效的利用了它、大大减少了参数的数量
 
@@ -96,7 +96,7 @@ inception结构的主要贡献有两个：一是使用1x1的卷积来进行升�
 
 引入了**组间信息交换的机制**。即对于第二层卷积而言，每个卷积核需要同时接收各组的特征作为输入。 
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img209.png" width=80%>
+<img src="./image/img209.png" width=80%>
 
 **优点**：原创了三种混洗单元，每个单元都是由逐群卷积和信道混洗组成，这种结构极大的降低了计算代价
 
@@ -106,7 +106,7 @@ inception结构的主要贡献有两个：一是使用1x1的卷积来进行升�
 
 在VGG的基础上，将其中的标准卷积层替换为**深度可分离卷积**，其计算代价是由深度卷积和逐点卷积两部分。并添加了两个超参数：**瘦身乘子**（width multiplier）其取值范围为0~1，用来减少网络的通道数。另外一个参数为**分辨率乘子**（resolution multiplier），该参数将缩放输入图像的尺寸，尺寸范围为224~128之间。
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img210.png" width=80%>
+<img src="./image/img210.png" width=80%>
 
 **优点**：使用了深度可分离卷积，大大减少了参数量。并添加了两个超参数，使得在保证了一定准确度的前提下，网络模型进一步缩小
 
@@ -122,15 +122,15 @@ inception结构的主要贡献有两个：一是使用1x1的卷积来进行升�
 
 **网络结构**：先通过Expansion layer来扩展维度，之后用深度可分离卷积来提取特征，而后使用Projection  layer来压缩数据，让网络重新变小。因为Expansion layer 和 Projection  layer都具有可以学习的参数，所以整个网络结构可以学习到如何更好的扩展数据和重新压缩数据。
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img214.png" width=30%>
+<img src="./image/img214.png" width=30%>
 
 **优点**：在V1的基础上，使用了**倒残差结构**(Inverted residual block)，即使用Pointwise先对特征图进行升维，在升维后接上Relu，减少Relu对特征的破坏。并引入了**特征复用结构**（ResNet bottleneck） 
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img211.png" width=50%>
+<img src="./image/img211.png" width=50%>
 
 最终，通过将几种轻型网络应用于花果数据集后，综合**验证集准确率**以及**树莓派模型适用性**，我们选择了**MobileNetV2**为最终的网络模型，并进行了代码的调整与优化，使其更好地适用于本项目中的花果分类。
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img212.png" width=40%>
+<img src="./image/img212.png" width=40%>
 
 
 ### 2.2 数据准备
@@ -228,7 +228,7 @@ for i,(img,label) in enumerate(ds_train.unbatch().take(9)):
 plt.show()
 ```
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img213.png" width=50%>
+<img src="./image/img213.png" width=50%>
 
 #### 2.3.2 定义MobileNetV2模型
 
@@ -370,7 +370,7 @@ notebook.list()
 notebook.start("--logdir "+datapath+"model/callback/")
 ```
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img216.png" width=100%>
+<img src="./image/img216.png" width=100%>
 
 #### 2.4.2 训练正确率查看
 
@@ -403,7 +403,7 @@ plt.legend(["train_loss", 'val_loss'])
 plt.show()
 ```
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img217.png" width=60%>
+<img src="./image/img217.png" width=60%>
 
 ```python
 train_metrics = history.history["accuracy"]
@@ -418,7 +418,7 @@ plt.legend(["train_accuracy", 'val_accuracy'])
 plt.show()
 ```
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img218.png" width=60%>
+<img src="./image/img218.png" width=60%>
 
 ### 2.5 模型改进
 

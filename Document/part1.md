@@ -11,7 +11,7 @@
 
 > 简单介绍一下图像识别领域所常用的卷积神经网络的结构  ：
 >
-> <img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img101.png" width=60%>
+> <img src="./image/img101.png" width=60%>
 >
 > 1、使用神经网络将数据进行正向传播，计算误差得到损失函数。
 >
@@ -36,13 +36,13 @@
 
 图像分类与目标检测所需数据类型分别如下所示：
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img103.png" width=50%>
+<img src="./image/img103.png" width=50%>
 
 #### 1.2.2 识别种类的确定
 
 花卉与水果种类繁多，首先需要确定种类再进行相关图片数据的收集。我们以领域内常用的花卉水果种类为导向进行数据获取，最终确定了以下花卉水果味识别种类。
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img102.png" width=80%>
+<img src="./image/img102.png" width=80%>
 
 ### 1.3 数据集获取
 
@@ -81,11 +81,11 @@
 >
 > ImageNet是一个不可用于商业目的的数据集，用户下载的话首先需要进行注册。  
 >
-> 1、完成注册后，首先搜索需要的图片，这里我们以香蕉banana为例：<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img301.png" width=90%>
+> 1、完成注册后，首先搜索需要的图片，这里我们以香蕉banana为例：<img src="./image/img301.png" width=90%>
 >
-> 2、点击Downloads，下载对应的数据图片。<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img104.png" width=70%>
+> 2、点击Downloads，下载对应的数据图片。<img src="./image/img104.png" width=70%>
 >
-> 3、除此之外，imagenet还提供了图片的原始网站，我们在下载图片时可以使用爬虫，对原始图片直接进行爬取。首先将网址复制，保存到本地：<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img105.png" width=70%>
+> 3、除此之外，imagenet还提供了图片的原始网站，我们在下载图片时可以使用爬虫，对原始图片直接进行爬取。首先将网址复制，保存到本地：<img src="./image/img105.png" width=70%>
 >
 > 3、接下来我们用如下的代码，逐个下载对应的图片：
 >
@@ -361,7 +361,7 @@ for items1 in os.listdir(path):
 
 接着我们便得到了处理好的图像分类数据。
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img215.png" width=80%>
+<img src="./image/img215.png" width=80%>
 
 我们已经将数据开源，并存放于百度网盘当中。
 
@@ -552,3 +552,13 @@ python generate_tfrecord.py --csv_input=images\test_labels.csv --image_dir=image
 ```
 
 上述命令将生成train.record和test.record文件，这两个数据文件将会使用在后续的目标检测训练中。
+
+我们已经将数据开源，并存放于百度网盘当中。
+
+<img src="./image/img106.png" width=80%>
+
+关于目标检测数据集的下载详见百度网盘 ：
+
+目标检测数据集链接：[https://pan.baidu.com/s/1IJ6xjvHv_WHje9d3XbtX1Q](https://link.zhihu.com/?target=https%3A//pan.baidu.com/s/1IJ6xjvHv_WHje9d3XbtX1Q)
+
+提取码：xnkt

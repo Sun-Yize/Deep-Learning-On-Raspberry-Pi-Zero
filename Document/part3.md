@@ -24,11 +24,11 @@
 
 + 搜索我们需要的数据，这里我们以香蕉banana为例：
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img301.png" width=70%>
+<img src="./image/img301.png" width=70%>
 
 + 点击Downloads，分别下载原始图片以及边界框。
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img302.png" width=70%>
+<img src="./image/img302.png" width=70%>
 
 下载好后，我们可以进一步查看我们下载的目标检测数据。LabelImg是目标检测标记图像的工具，它既可以用于标注图片，也可以用于查看目标检测的数据。我们可以在github中下载其最新版本，其github页面上有关于如何安装和使用它的非常清晰的说明。
 
@@ -38,7 +38,7 @@
 
 我们将我们下载的images与Bounding Boxes放入同一个文件夹，并用LabelImg打开，具体效果如下：
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img303.png" width=70%>
+<img src="./image/img303.png" width=70%>
 
 同时我们也可以自己用LabelImg进行数据标注，LabelImg保存一个.xml文件，其中包含每个图像的标签数据。这些.xml文件将用于生成TFRecords，它们是TensorFlow训练的输入之一。
 
@@ -54,7 +54,7 @@
 
 同时，我们选择将SSD与MobileNet相结合，生成以MobileNet为基底的SSD-MobileNetV2网络。具体的网络结构如下：
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img304.png" width=100%>
+<img src="./image/img304.png" width=100%>
 
 ### 3.4 Tensorflow2目标检测API
 
@@ -114,7 +114,7 @@ export PYTHONPATH=$PYTHONPATH:models/research/:models
 
 接下来我们要生成TFRecords格式的数据，首先保证目标检测的数据已经处理为了如下格式，在文件夹中排列：
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img305.png" width=70%>
+<img src="./image/img305.png" width=70%>
 
 在models/research/object_detection中新建images文件夹。
 
@@ -402,7 +402,7 @@ python3 model_main_tf2.py \
 
 在执行命令后，TensorFlow将初始化训练。初始化过程可能需要1-2分钟左右。当初始化完成后，程序便开始进行正式训练：
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img306.png" width=100%>
+<img src="./image/img306.png" width=100%>
 
 在训练过程中，会从命令行输出每100epoach的训练结果。在本文所部署的SSD-MobileNetV2模型，使用了NVIDIA Tesla V100显卡进行训练，训练约5-6小时后，结果开始逐步收敛，损失函数最终收敛到0.1以下，目标检测模型可以基本实现正确的检测。
 
@@ -427,7 +427,7 @@ notebook.start("--logdir models/research/object_detection/training")
 
 我们可以在输出界面看到训练的具体情况：
 
-<img src="C:/Users/86178/Desktop/深度学习/github/Document/image/img307.png" width=100%>
+<img src="./image/img307.png" width=100%>
 
 ### 3.9 导出训练模型
 
