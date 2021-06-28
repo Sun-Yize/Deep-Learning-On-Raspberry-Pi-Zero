@@ -365,8 +365,8 @@ for items1 in os.listdir(path):
 
 我们已经将数据开源，并存放于百度网盘当中。
 
-关于数据集的下载详见：链接：https://pan.baidu.com/s/1zUK0LPZ6SO8tl9ri0GQQdw 
-提取码：5q9o 
+关于数据集的下载详见：链接：https://pan.baidu.com/s/1N0DybQfNV_4JWCRTYd7SKw 
+提取码：3ey9
 复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V1的分享
 
 #### 1.4.2目标检测数据
